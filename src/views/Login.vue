@@ -453,6 +453,9 @@ padding-right: 60px;
   display: flex;
   flex-direction: column;
 }
+.imagens{
+height:0px ;
+}
 }
 @media screen and (min-width: 300px) and (max-width: 400px){
 
@@ -468,6 +471,10 @@ padding-right: 60px;
   text-align: center;
   flex-direction: column;
   background-image: url(../assets/rpg.jpg);
+  
+}
+.imagens{
+height:0px ;
 }
 }
 </style>
