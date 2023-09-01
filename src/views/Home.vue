@@ -315,8 +315,9 @@
           o final por enquanto...
         </h1>
         <span>
-          Bem, irei parar por enquanto. Sempre sairá em dois atos, Até depois! E cadastre-se
-          para receber mais capitulos quando você voltar, ja tem mais 2 capitulos. Até👋
+          Bem, irei parar por enquanto. Sempre sairá em dois atos, Até depois! E
+          cadastre-se para receber mais capitulos quando você voltar, ja tem
+          mais 2 capitulos. Até👋
         </span>
         <br />
         <br />
@@ -340,14 +341,17 @@
             <p>comentario {{ comentario.id }} :</p>
 
             <p>{{ comentario.nome || "Unknown" }}</p>
-            <input
-              style="width: 55%; height: 3rem; padding-left: 13px"
+            <p
+              style="width: 55%; height: 4rem; padding-left: 13px; border: 1px solid rgb(156, 155, 155);
+              padding-top: 18px;"
               class="coment"
-              disabled
-              :value="comentario.comentario"
-              type="comentary"
+       
+           
+      
               id="comentario"
-            />
+            >
+              {{ comentario.comentario }}
+            </p>
           </div>
         </div>
       </div>
@@ -441,6 +445,10 @@ export default {
   margin-left: 10px;
   margin-top: 0;
   padding-top: 0;
+}
+.coment{
+  height: 150px; width: 50px;
+
 }
 .retanguloCima {
   width: 100%;
