@@ -315,9 +315,8 @@
           o final por enquanto...
         </h1>
         <span>
-          Bem, irei parar por enquanto. Sempre sairá em dois atos, o segundo foi
-          menor pois o prólogo foi bem grande também. Até depois! E cadastre-se
-          para, para quando você voltar, ter as continuações. Até👋
+          Bem, irei parar por enquanto. Sempre sairá em dois atos, Até depois! E cadastre-se
+          para receber mais capitulos quando você voltar, ja tem mais 2 capitulos. Até👋
         </span>
         <br />
         <br />
