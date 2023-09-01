@@ -167,15 +167,14 @@
           Venturis como pilota, eles enxergam nela um grande potencial para se
           tornar uma Jedi, alem de achar dois promisores jovens Jedis : Kael e
           Aeryn. Decididos a desafiar o Império, os cinco mestres decidem
-          treinar Kael, Sora e Aeryn Tora.
-          <br /><br />
+          treinar Kael, Sora e Aeryn Tora. <br /><br />
         </p>
 
         <div style="font-size: 2rem">
           <p>esse é Kael:</p>
           <img src="../assets/outroPersonagem.ico" alt="" />
         </div>
-        
+
         <br />
         <p>
           <span style="font-size: 2rem; color: darkmagenta">2.</span>
@@ -224,36 +223,38 @@
           determinação, conseguiram alcançar a tão esperada vitória, libertando
           a galáxia das garras opressoras do Império. Com a derrota do Império,
           a rebelião assumiu o controle da galáxia, e muitas decisões
-          importantes passaram a ser tomadas pelo grupo denominado: O Conselho. composto pelos cinco
-          Jedi mestres, que também foram os mentores de Sora, Kael e Aeryn .para guiar e proteger
-          a galáxia em tempos de paz e reconstrução. No entanto, o que ninguém
-          esperava era que o Conselho Jedi decidisse aceitar um novo membro em
-          suas fileiras, alguém igualmente poderoso, mas de uma origem
-          inesperada: um Sith. Os motivos dessa decisão eram desconhecidos para
-          muitos, e alguns questionavam a sabedoria de confiar em alguém com tal
-          conexão com o lado sombrio da Força. Apenas os membros do Conselho
-          sabiam o verdadeiro motivo e acreditavam que esse novo membro poderia
-          ser redimido e trazer equilíbrio à Força. Com o passar do tempo,
-          rumores começaram a surgir sobre Sora e suas ações misteriosas. Sem
-          que ninguém soubesse ao certo como ou por que, ela parecia ter sido
-          corrompida pela sombra do lado sombrio. Essa corrupção a levou a
-          cometer atos inimagináveis, culminando em uma terrível reviravolta:
-          Sora traiu os seus antigos mentores e companheiros Jedi,
-          enfrentando-os em um confronto sangrento e destrutivo.
+          importantes passaram a ser tomadas pelo grupo denominado: O Conselho.
+          composto pelos cinco Jedi mestres, que também foram os mentores de
+          Sora, Kael e Aeryn .para guiar e proteger a galáxia em tempos de paz e
+          reconstrução. No entanto, o que ninguém esperava era que o Conselho
+          Jedi decidisse aceitar um novo membro em suas fileiras, alguém
+          igualmente poderoso, mas de uma origem inesperada: um Sith. Os motivos
+          dessa decisão eram desconhecidos para muitos, e alguns questionavam a
+          sabedoria de confiar em alguém com tal conexão com o lado sombrio da
+          Força. Apenas os membros do Conselho sabiam o verdadeiro motivo e
+          acreditavam que esse novo membro poderia ser redimido e trazer
+          equilíbrio à Força. Com o passar do tempo, rumores começaram a surgir
+          sobre Sora e suas ações misteriosas. Sem que ninguém soubesse ao certo
+          como ou por que, ela parecia ter sido corrompida pela sombra do lado
+          sombrio. Essa corrupção a levou a cometer atos inimagináveis,
+          culminando em uma terrível reviravolta: Sora traiu os seus antigos
+          mentores e companheiros Jedi, enfrentando-os em um confronto sangrento
+          e destrutivo.
         </p>
         <br />
 
         <p>
           <span style="font-size: 2rem; color: darkmagenta">5.</span>
           Sozinha, Sora enfrentou quase todos os Jedi restantes, eliminando a
-          maioria, sobrando alguns, com sua força incomparável e desencadeando uma onda de medo e
-          desespero por toda a galáxia. A traição foi avassaladora, e ela não
-          poupou nem mesmo os membros do Conselho Jedi , o sobreviventes diziam
-          que o olhar de Sora era assasino e de muita raiva.A ascensão da Sora
-          corrompida levou ao ressurgimento de um novo Império, com ela como sua
-          líder impiedosa. Assim, ela mergulhou a galáxia em uma nova era de
-          escuridão e tirania, marcando um fim sombrio para o sonho de paz e
-          liberdade que os Jedi lutaram tanto para alcançar.
+          maioria, sobrando alguns, com sua força incomparável e desencadeando
+          uma onda de medo e desespero por toda a galáxia. A traição foi
+          avassaladora, e ela não poupou nem mesmo os membros do Conselho Jedi ,
+          o sobreviventes diziam que o olhar de Sora era assasino e de muita
+          raiva.A ascensão da Sora corrompida levou ao ressurgimento de um novo
+          Império, com ela como sua líder impiedosa. Assim, ela mergulhou a
+          galáxia em uma nova era de escuridão e tirania, marcando um fim
+          sombrio para o sonho de paz e liberdade que os Jedi lutaram tanto para
+          alcançar.
         </p>
         <br />
 
@@ -376,7 +377,7 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import { api } from "../lib/api";
 import { mapState, mapActions } from "pinia";
 import { useAuthStore } from "../stores/counter";
 
@@ -401,15 +402,15 @@ export default {
     ...mapActions(useAuthStore, ["deslogar"]),
 
     obtdados() {
-      axios.get("/historias").then((res) => {
+      api.get("/historias").then((res) => {
         this.dados = res.data;
       });
-      axios.get("/comentarios").then((res) => {
+      api.get("/comentarios").then((res) => {
         this.todosComents = res.data;
       });
     },
     async postarComent() {
-      await axios.post("/comentarios", {
+      await api.post("/comentarios", {
         comentario: this.comentario,
         idUsuario: this.id ? this.id : -1,
       });
