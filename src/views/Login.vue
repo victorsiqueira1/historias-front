@@ -454,6 +454,10 @@ padding-right: 60px;
   flex-direction: column;
 }
 
+.imagens{
+height:0px;
+
+}
 }
 @media screen and (min-width: 300px) and (max-width: 400px){
 
@@ -473,6 +477,7 @@ padding-right: 60px;
 }
 .imagens{
 height:0px;
+
 }
 }
 </style>
