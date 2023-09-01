@@ -401,15 +401,15 @@ export default {
     ...mapActions(useAuthStore, ["deslogar"]),
 
     obtdados() {
-      axios.get("http://localhost:3333/historias").then((res) => {
+      axios.get("/historias").then((res) => {
         this.dados = res.data;
       });
-      axios.get("http://localhost:3333/comentarios").then((res) => {
+      axios.get("/comentarios").then((res) => {
         this.todosComents = res.data;
       });
     },
     async postarComent() {
-      await axios.post("http://localhost:3333/comentarios", {
+      await axios.post("/comentarios", {
         comentario: this.comentario,
         idUsuario: this.id ? this.id : -1,
       });
