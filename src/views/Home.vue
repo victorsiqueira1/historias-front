@@ -332,7 +332,6 @@
             id="comentario"
             @keyup.enter="postarComent"
           />
-
           <div
             style="padding-top: 20px"
             v-for="comentario in todosComents"
@@ -342,7 +341,7 @@
 
             <p>{{ comentario.nome || "Unknown" }}</p>
             <p
-              style="width: 55%; height: 4rem; padding-left: 13px; border: 1px solid rgb(156, 155, 155);
+              style="width: 50rem; height: 4rem; padding-left: 13px; border: 1px solid rgb(156, 155, 155);
               padding-top: 18px;"
               class="coment"
        
@@ -352,7 +351,9 @@
             >
               {{ comentario.comentario }}
             </p>
+         
           </div>
+          <div></div>
         </div>
       </div>
       <div
@@ -426,6 +427,10 @@ export default {
       this.deslogar();
       this.$router.replace("/login");
     },
+    apagar(comentario){
+      console.log ( comentario.id)
+
+    }
   },
   created() {
     this.obtdados();
@@ -814,5 +819,6 @@ a {
     top: 3.9rem;
     left: 50rem;
   }
+ 
 }
 </style>
