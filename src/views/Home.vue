@@ -341,7 +341,7 @@
 
             <p>{{ comentario.nome || "Unknown" }}</p>
             <input
-              style="width: 25%; height: 3rem; padding-left: 13px"
+              style="width: 55%; height: 3rem; padding-left: 13px"
               class="coment"
               disabled
               :value="comentario.comentario"
